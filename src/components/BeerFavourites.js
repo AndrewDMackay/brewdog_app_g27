@@ -2,20 +2,19 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const BeerList = ({beers, onBeerClick}) => {
+const BeerFavourites = ({beers, onBeerClick}) => {
 
-    const beersItems = beers.map((beer, index) => {
+    const beersFavourites = beers.map((beer, index) => {
       return <ListItem beer={beer} key={index} onBeerClick={onBeerClick} />
     })
 
   return (
     <div className="flexbox">
     <div className="flexbox-container">
-      {beersItems}
+      {beersFavourites}
     </div>
   </div>
   )
 }
 
-export default BeerList;
-
+export default BeerFavourites;

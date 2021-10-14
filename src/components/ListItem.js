@@ -8,7 +8,7 @@ const ListItem = ({beer, onBeerClick}) => {
   }
 
 
-  return <div class="list-item" onClick={handleClick}><img src={beer.image_url} alt={beer.name}/><h2>{beer.name}</h2></div>
+  return <div className="list-item" onClick={handleClick}><img src={beer.image_url} alt={beer.name}/><h2>{beer.name}</h2></div>
 }
 
 export default ListItem;
