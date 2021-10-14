@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import BeerList from '../components/BeerList';
+import BeerDetail from '../components/BeerDetail';
 
 
 const BeerContainer = () => {
@@ -17,13 +18,15 @@ const BeerContainer = () => {
         .then(beers => setBeers(beers))
     }
 
-    const onBeerSelected = function(beer){
+    const onBeerClick = function(beer){
         setSelectedBeer(beer);
     }
 
+ 
     return (
         <div className="main-container">
-            <BeerList beers={beers} onBeerSelected={onBeerSelected} />
+            <BeerList beers={beers} onBeerClick={onBeerClick} />
+            {selectedBeer ? <BeerDetail selectedBeer={selectedBeer} /> : null}
         </div>
     )
 }
