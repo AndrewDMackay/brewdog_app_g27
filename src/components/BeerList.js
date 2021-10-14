@@ -9,10 +9,10 @@ const BeerList = ({beers, onBeerClick}) => {
     })
 
   return (
-    <div>
-    <ul>
+    <div class="flexbox">
+    <div class="flexbox-container">
       {beersItems}
-    </ul>
+    </div>
   </div>
   )
 }
