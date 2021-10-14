@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import BeerList from '../components/BeerList';
 import BeerDetail from '../components/BeerDetail';
+import BeerFavourites from '../components/BeerFavourites';
 
 
 const BeerContainer = () => {
     const [beers, setBeers] = useState([]);
-    const [selectedBeer, setSelectedBeer] = useState(null);
+    const [selectedBeer, setSelectedBeer, setFavouriteBeer] = useState(null);
+    const [favouriteBeers, setFavouriteBeers] = useState([]);
 
     useEffect(() => {
       getBeers();
@@ -29,17 +31,12 @@ const BeerContainer = () => {
         setSelectedBeer(null);
     }
 
-    const onClickFavourite = function(beer){
-        const favouriteBeers = [];
-        const 
-    }
-
  
     return (
         <div className="main-container">
-            {!selectedBeer ?<BeerList beers={beers} onBeerClick={onBeerClick}/> : null}
+            {!selectedBeer ? <BeerList beers={beers} onBeerClick={onBeerClick}/> : null}
             {selectedBeer ? <BeerDetail selectedBeer={selectedBeer} onClickIndex={onClickIndex}/> : null}
-            {selectedBeer ?<BeerDetail beers={beers} onClickFavourite={onClickFavourite}/> : null}
+            {!selectedBeer ? <BeerFavourites beers={beers}/> : null}
         </div>
     )
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 import BeerContainer from '../containers/BeerContainer';
 
-const BeerDetail = ({selectedBeer, onClickIndex}) => {
+const BeerDetail = ({selectedBeer, onClickIndex, onClickFavourite}) => {
 
 
     const handleClick = function(){
@@ -16,13 +16,16 @@ const BeerDetail = ({selectedBeer, onClickIndex}) => {
   return (
       
       <div>
-          <h1>{selectedBeer.name}</h1>
+          <h2>{selectedBeer.name}</h2>
           <img src={selectedBeer.image_url} alt={selectedBeer.name}/>
+          <div className="beer-description-container">
           <p>{selectedBeer.description}</p>
-          <p onClick={handleFavourite}><strong>FAVOURITE</strong></p>
-          <p onClick={handleClick}><strong>BACK TO BEERS..</strong></p>
+          </div>
+          <button onClick={handleFavourite}><strong>FAVOURITE..</strong></button>
+          <h3 onClick={handleClick}><strong>BACK TO BEERS..</strong></h3>
       </div>
   )
 }
 
 export default BeerDetail;
+

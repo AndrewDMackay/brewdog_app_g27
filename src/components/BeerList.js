@@ -8,13 +8,13 @@ const BeerList = ({beers, onBeerClick}) => {
       return <ListItem beer={beer} key={index} onBeerClick={onBeerClick} />
     })
 
-  return (
-    <div className="flexbox">
-    <div className="flexbox-container">
-      {beersItems}
+    return (
+        <div className="flexbox">
+        <div className="flexbox-container">
+        {beersItems}
+        </div>
     </div>
-  </div>
-  )
+    )
 }
 
 export default BeerList;
